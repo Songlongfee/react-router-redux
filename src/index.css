@@ -1,0 +1,69 @@
+html, body{
+  height: auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f2f5;
+}
+*{
+  font-family: PingFangSC-Regular!important;
+}
+#root {
+  height: 100%;
+}
+.bold{
+  font-weight: 600;
+}
+.ant-btn{
+  padding: 0 25px;
+}
+.ant-btn-primary {
+  color: #fff;
+  background-color: #007AED;
+  border-color: #007AED;
+}
+.ant-pagination-item-active{
+  background: #007AED;
+  border: 1px solid #007AED;
+}
+.ant-pagination-item-active:hover{
+  background: #40a9ff;
+  border: 1px solid #40a9ff;
+}
+.ant-pagination-item-active a{
+  color: #ffffff;
+}
+.ant-pagination-item-active:hover a{
+  color: #ffffff;
+}
+
+/* 表头修改 */
+.fuck-th thead{
+  background: #f0f2f5;
+}
+.fuck-th thead th{
+  border: none;
+}
+.fuck-th thead th:nth-child(even) span{
+  background: #EFE1F5;
+}
+.fuck-th thead th:nth-child(odd) span{
+  background: #DEF1F0;
+}
+.fuck-th td{
+  text-align: center;
+}
+.ant-table-thead > tr{
+  padding: 7px 0;
+  height: 54px;
+}
+.ant-table-thead > tr > th{
+  padding: 7px 0;
+}
+.ant-table-thead > tr > th span{
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}

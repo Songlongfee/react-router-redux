@@ -1,0 +1,67 @@
+.main{
+  background: #f0f2f5;
+}
+.add-role{
+  margin: 25px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+.add-role .title{
+  line-height: 60px;
+  font-size: 16px;
+  padding: 0 32px;
+  overflow: hidden;
+  border-bottom: 1px solid #E9E9E9;
+}
+.role-form{
+  padding: 50px;
+  overflow: hidden;
+}
+.form-top{
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+.form-left{
+  float: left;
+  width: 50%;
+  text-align: right;
+  padding-right: 50px;
+}
+.form-left .item{
+  margin-bottom: 30px;
+}
+.form-left .item2 .ant-form-item-label{
+  height: 94px;
+}
+.form-left Input{
+  width: 272px;
+  height: 32px;
+}
+.form-left Textarea{
+  width: 272px;
+  height: 88px;
+}
+.form-right{
+  float: left;
+  width: 50%;
+  padding-left: 50px;
+}
+.form-bottom{
+  text-align: center;
+}
+.form-bottom .btn{
+  color: #007AED;
+  border: 1px solid #007AED;
+  margin-right: 24px;
+}
+.tree-wrap{
+  padding: 20px 30px;
+  border: 1px solid #D9D9D9;
+  border-radius: 4px;
+  width: 278px;
+}
+.err-msg{
+  font-size: 14px;
+  color: #f5222d;
+  line-height: 20px;
+}

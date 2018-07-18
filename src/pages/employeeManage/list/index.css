@@ -1,0 +1,69 @@
+.main{
+  width: 100%;
+  background: rgb(240,242,245);
+  font-family: PingFangSC-Semibold;
+  height: 100%;
+  color: #000000;
+}
+.header{
+  line-height: 60px;
+  padding-left: 32px;
+  font-size: 20px;
+  color: #000000;
+  background: #fff;
+}
+.form{
+  margin: 25px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+.form-title{
+  line-height: 60px;
+  font-size: 16px;
+  padding: 0 32px;
+  overflow: hidden;
+  border-bottom: 1px solid #E9E9E9;
+}
+.form-title .left{
+  float: left;
+  width: 50%;
+}
+.form-title .right{
+  float: left;
+  width: 50%;
+  height: 60px;
+}
+.form-title .right Button{
+  font-size: 14px;
+  color: #007AED;
+  border: 1px solid #007AED;
+  float: right;
+  margin: 14px 0 14px 24px;
+}
+.form-content{
+  padding: 40px 32px;
+}
+.table{
+  padding: 20px 32px;
+  background: #ffffff;
+  border-radius: 4px;
+  margin: 25px;
+}
+.table .title{
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+.table th{
+  background: #F4F5F7;
+}
+.to{
+  padding-right: 16px;
+  color: #B6B6B8;
+}
+.label .ant-form-item-label{
+  width: 70px;
+}
+.label{
+  margin: 0 100px 20px 0!important;
+}
