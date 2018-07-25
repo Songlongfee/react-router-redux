@@ -3,6 +3,9 @@ import "./index.css";
 import { Form, Input, Tree, Button, message } from "antd";
 import Api from "../../../request.js";
 import { postPageHeight } from "../../../utils/index";
+import * as actions from "../../../actions/roleListAction";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 const FormItem = Form.Item;
 const { TextArea } = Input;
@@ -83,6 +86,7 @@ class AddRoleForm extends Component {
     });
   }
   componentDidMount() {
+    console.log(this.props)
     Api.post(`function/getAllFunctionList`, {
       bussType: 1 //后台类型
     }).then(res => {
@@ -97,6 +101,7 @@ class AddRoleForm extends Component {
         postPageHeight()
       }
     });
+
   }
   //生成权限树
   createNodeTree(tree) {
@@ -121,6 +126,8 @@ class AddRoleForm extends Component {
     );
   }
   render() {
+    // const { relationId } = this.props;
+    console.log(this.props)
     const { getFieldDecorator } = this.props.form;
     const roleNameConfig = {
       rules: [{ type: "string", required: true, message: "请输入角色名称" }]
@@ -187,4 +194,19 @@ class AddRoleForm extends Component {
 
 const AddRole = Form.create()(AddRoleForm);
 
-export default AddRole;
+function mapStateToProps(state) {
+  console.log(state)
+  let { roleListReducer } = state;
+  return roleListReducer
+}
+
+function mapDispatchToProps(dispatch) {
+  console.log(actions)
+  return {
+		actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(AddRole);
+
+// export default AddRole;

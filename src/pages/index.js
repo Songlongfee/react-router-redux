@@ -13,7 +13,7 @@ class App extends Component {
       <HashRouter>
         <Switch>
           <Route path="/role-list" component={RoleManage} />
-          <Route path="/add-role" component={AddRole} />
+          <Route path="/add-role/:id/:name" component={AddRole} />
           <Route path="/edit-role" component={EditRole} />
           <Route path="/employee-list" component={EmployeeList} />
           <Route path="/add-employee" component={AddEmployee} />

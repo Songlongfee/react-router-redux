@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import "./index.css";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Form, Button, Input, DatePicker, Table, Modal, message } from "antd";
 import Api from "../../../request.js";
 import { postPageHeight } from "../../../utils/index";
+import * as action1 from "../../../actions/roleListAction";
+import * as action2 from "../../../actions/editRoleActon";
 
 const FormItem = Form.Item;
 const confirm = Modal.confirm;
@@ -10,6 +15,7 @@ const confirm = Modal.confirm;
 class Search extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
       values: {}
     };
@@ -39,6 +45,7 @@ class Search extends Component {
   };
 
   render() {
+    console.log(this.props)
     const { getFieldDecorator } = this.props.form;
     const roleNameConfig = {
       rules: [{ type: "string", required: false, message: "请输入角色名称" }]
@@ -193,7 +200,9 @@ class RoleManage extends Component {
       });
   }
   toAddRole() {
-    this.props.history.push(`/add-role`)
+    const { roleListReducer, actions } = this.props;
+    actions.setUserList([{name:'peng'},{name:'song'}])
+    // this.props.history.push(`/add-role`)
   }
   editRole(params) {
     // 编辑角色
@@ -259,6 +268,7 @@ class RoleManage extends Component {
   }
 
   render() {
+    console.log(this.props.roleListReducer.toJS())
     return (
       <div className="main">
         <div className="header bold">角色管理</div>
@@ -267,11 +277,11 @@ class RoleManage extends Component {
             <div className="left bold">角色查询</div>
             <div className="right">
               <Button onClick={this.toAddRole.bind(this)}>新增角色</Button>
-              {/* <Button>查看</Button> */}
+              <Link to="/add-role/2/song">新增</Link>
             </div>
           </div>
           <div className="form-content">
-            <SearchForm getRoleList={this.getRoleList} />
+            <SearchForm getRoleList={this.getRoleList} {...this.props} />
           </div>
         </div>
         <div className="table fuck-th">
@@ -300,4 +310,19 @@ class RoleManage extends Component {
   }
 }
 
-export default RoleManage;
+function mapStateToProps(state) {
+  let { roleListReducer, editRoleReducer } = state;
+  return {  roleListReducer, editRoleReducer }
+}
+
+function mapDispatchToProps(dispatch) {
+  const actions = {
+    ...action1,
+    ...action2
+  }
+  return {
+		actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(RoleManage);
