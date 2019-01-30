@@ -1,1 +1,1 @@
-权限管理公共模块
+### a react project contains react-router and react-redux
